@@ -113,7 +113,7 @@ public class ApiServiceImpl implements ApiService, UserDetailsService {
         confirmationTokenService.updateExpiredAt(apiUser,LocalDateTime.now().plusMinutes(15L));
 
 
-        String link = "http://localhost:8083/registration/confirm?token=" + token; //token
+        String link = "https://e-library-apis.herokuapp.com/confirm?token=" + token; //token
         emailSender.send(apiUser.getUserName(),
                 buildEmail(apiUser.getUserName(), link));
 
@@ -131,7 +131,7 @@ public class ApiServiceImpl implements ApiService, UserDetailsService {
         //TODO SEND EMAIL
 
 
-        String link = "http://localhost:8083/registration/confirm?token=" + token; //token
+        String link = "https://e-library-apis.herokuapp.com/confirm?token=" + token; //token
         emailSender.send(apiUser.getUserName(),
                 buildEmail(apiUser.getUserName(), link));
         //I might need to remove this return token and maybe write under
